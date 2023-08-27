@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Question: {name: 'John', id: 123, marks : 98 },
+        {name: 'Baba', id: 101, marks : 23 },
+        {name: 'yaga', id: 200, marks : 45 },
+        {name: 'Wick', id: 115, marks : 75 } </h4>
+    <p>Question 1: "We are interested in retrieving only the students' names; all the names should be in caps.
+
+        ['JOHN', 'BABA', 'YAGA', 'WICK']"</p>
+        <pre>let ans=[]
+            ans=studentRecords.map((e)=>e.name.toUpperCase())
+            console.log(ans)</pre>
+            <p>O/P:['JOHN', 'BABA', 'YAGA', 'WICK'] </p>
+
+        <p>Question 2: "Suppose we have the same dataset as above but this time we want to get the details of students who scored more than 50 marks.
+
+            [{name: 'John', id: 123, marks: 98 },{name: 'Wick', id: 115, marks: 75 }]"</p>
+            <pre>let ans=studentRecords.filter(e=>e.marks>50)
+                console.log(ans)</pre>
+                <p>O/P: [{name: 'John', id: 123, marks: 98 },{name: 'Wick', id: 115, marks: 75 }]</p>
+            <p>Question 3: Retrieve the details of students who scored more than 50 marks and have IDs greater than 120.</p>
+            <pre>let ans = studentRecords.filter(stu => stu.id > 120 && stu.marks>50)
+                console.log(ans)</pre>
+                <p>O/P: {name: 'John', id: 123, marks: 98}
+                    length
+                    : 
+                    1
+                    [[Prototype]]
+                    : 
+                    Array(0)</p>
+            <p>Question 4: Consider the same scenario we have discussed above, but this time we would like to know the sum total of the marks of the students. </p>
+            <pre>let ans = studentRecords.filter(stu => stu.id > 120 && stu.marks>50).reduce((sum,curr) => sum + curr.marks ,0)
+                console.log(ans)</pre>
+                <p>O/P: 98</p>
+            <p>Question 5: This time we want to get only the names of the students who scored more than 50 marks from the same dataset used above.</p>
+            <pre>let ans=studentRecords.filter(e=>e.marks>50).map(e=>e.name)
+                console.log(ans)
+            </pre> 
+            <p>O/P: ['John', 'Wick']</p>
+            <p>Question 6: This time we are required to print the sum of marks of the students with id > 120.</p>
+            <pre>let ans = studentRecords.filter(stu => stu.id > 120).reduce((acc,curr) => acc + curr.marks ,0)
+                console.log(ans)</pre>
+                <p>O/P:143</p>
+            <p>Question 7: This time we are required to print the total marks of the students with marks greater than 50 after a grace of 15 marks has been added to those students who scored less than 50.</p>
+            <pre>Let ans=studentRecords.map(function(stu){
+                if(stu.marks < 50){
+                    stu.marks += 15;}
+                return stu;
+              }).filter(stu => stu.marks > 50).reduce((sum,curr) => sum+curr.marks, 0);
+              console.log(ans)</pre>
+              <p>O/P:233</p>
+            <p>Question 8: Create 6 objects , each object will have name, class, roll no as properties. Store these objects in an array of objects. </p>
+            <pre>let student=[ {name: 'John', sclass: "VI", rollno : 1234 },
+                {name: 'Baba', sclass:  "VI", rollno : 2213 },
+                {name: 'yogesh', sclass: "VI", rollno : 4115 },
+                {name: 'Chandhru', sclass:  "VI", rollno : 1175 } ,
+                {name: 'Vicky', sclass:  "VI", rollno : 4546 },
+                {name: 'Ram', sclass:  "VI", rollno : 1122 }] 
+                console.log(student)
+      </pre>
+      <p>O/P: 0
+        : 
+        {name: 'John', sclass: 'VI', rollno: 1234}
+        1
+        : 
+        {name: 'Baba', sclass: 'VI', rollno: 2213}
+        2
+        : 
+        {name: 'yogesh', sclass: 'VI', rollno: 4115}
+        3
+        : 
+        {name: 'Chandhru', sclass: 'VI', rollno: 1175}
+        4
+        : 
+        {name: 'Vicky', sclass: 'VI', rollno: 4546}
+        5
+        : 
+        {name: 'Ram', sclass: 'VI', rollno: 1122}
+        length
+        : 
+        6</p>
+        <script src="./script.js"></script>
+</body>
+</html>
